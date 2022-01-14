@@ -1,0 +1,137 @@
+/* 
+    Modal basic
+*/
+.modal-basic{
+    position        : fixed;
+    z-index         : 200;
+    top             : 0;
+    left            : 0;
+    right           : 0;
+    bottom          : 0;
+    display         : flex;
+    justify-content : center;
+    align-items     : center;
+    overflow        : hidden;
+}
+.modal-basic-dialog{
+    z-index     : 220;
+    position    : absolute;
+}
+.modal-basic-backdrop{
+    position    : absolute;
+    z-index     : 210;
+    top         : 0;
+    left        : 0;
+    right       : 0;
+    bottom      : 0;
+    background-color: rgba(0,0,0,0.5);
+}
+.modal-basic-content{
+    width           : calc(100vw - 45px);
+    max-width       : 750px;
+    max-height      : calc(100vh - 100px);
+    box-sizing      : border-box;
+    display         : flex;
+    flex-direction  : column;
+    border-radius   : 4px;
+    overflow-y      : auto;
+}
+
+/* Header */
+
+.modal-basic-header{
+    position            : sticky;
+    top                 : 0;
+    padding             : 10px;
+    display             : flex;
+    align-items         : center;
+    justify-content     : space-between;
+    background-color    : var(--modal-header-bg);
+    border-bottom       : 1px solid var(--bg-tertiary);
+}
+.modal-basic-header__title{
+    font-weight : 500;
+    color       : var(--txt-primary);
+}
+.modal-basic-header__btn-close{
+    height          : 36px;
+    width           : 36px;
+    color           : var(--txt-primary);
+    background      : transparent;
+    border          : 1px solid transparent;
+    border-radius   : 8px;
+}
+.modal-basic-header__btn-close:hover{
+    border      : 1px solid var(--bg-tertiary);
+    cursor      : pointer;
+    transition  : all ease 0.1s;
+}
+
+/* Body */
+
+.modal-basic-body{
+    box-sizing          : border-box;
+    display             : flex;
+    justify-content     : space-around;
+    background-color    : var(--modal-body-bg);
+    overflow-y          : auto;
+}
+.modal-basic-body-content{
+    box-sizing: border-box;
+    padding: 10px;
+    width: 100%;
+    overflow-x: auto;
+}
+
+/* Footer */
+
+.modal-basic-footer{
+    position            : sticky;
+    bottom              : 0;
+    padding             : 10px;
+    display             : flex;
+    align-items         : center;
+    justify-content     : flex-end;
+    background-color    : var(--modal-footer-bg);
+    border-top          : 1px solid var(--bg-tertiary);
+}
+
+/* Scroll */
+
+.modal-basic-scroll::-webkit-scrollbar{
+    width   : 14px;
+    height  : 14px;
+}
+.modal-basic-scroll::-webkit-scrollbar-corner{
+    background-color: transparent;
+}
+.modal-basic-scroll::-webkit-scrollbar-thumb{
+    background-color    : var(--bg-primary);
+    border-color        : transparent;
+}
+.modal-basic-scroll::-webkit-scrollbar-thumb,
+.modal-basic-scroll::-webkit-scrollbar-track{
+    background-clip : padding-box;
+    border-width    : 3px;
+    border-style    : solid;
+    border-radius   : 7px;
+    border-color    : transparent;
+}
+.modal-basic-scroll::-webkit-scrollbar-track{
+    background-color: var(--bg-secondary);
+}
+
+/* Media queries */
+
+@media( max-width: 425px ){
+
+    .modal-basic-content{
+        max-height      : calc(90vh - 45px);
+        /* justify-content : center; */
+    }
+    .modal-basic-body{
+        flex-direction: column;
+        justify-content: initial;
+    }
+
+}
